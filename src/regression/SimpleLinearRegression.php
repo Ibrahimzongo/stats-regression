@@ -16,7 +16,6 @@ class SimpleLinearRegression
 
     public function fit(array $x, array $y)
     {
-        // Vérifier que les tableaux $x et $y ont la même taille
         if (count($x) !== count($y)) {
             throw new \InvalidArgumentException("Les tableaux X et Y doivent avoir la même taille.");
         }
@@ -25,11 +24,9 @@ class SimpleLinearRegression
         $sumX = array_sum($x);
         $sumY = array_sum($y);
 
-        // Calcul des moyennes
         $meanX = $sumX / $n;
         $meanY = $sumY / $n;
 
-        // Calcul des coefficients de régression
         $covXY = 0;
         $varX = 0;
 
@@ -38,7 +35,6 @@ class SimpleLinearRegression
             $varX += pow(($x[$i] - $meanX), 2);
         }
 
-        // Eviter la division par zéro
         if ($varX == 0) {
             throw new \RuntimeException("La variance de X ne peut pas être zéro.");
         }
@@ -46,7 +42,6 @@ class SimpleLinearRegression
         $this->slope = $covXY / $varX;
         $this->intercept = $meanY - $this->slope * $meanX;
 
-        // Calcul des erreurs standard
         $residuals = [];
         for ($i = 0; $i < $n; $i++) {
             $predicted = $this->predict($x[$i]);
@@ -57,26 +52,19 @@ class SimpleLinearRegression
             return pow($residual, 2);
         }, $residuals));
 
-        // Erreur standard
         $standardError = sqrt($residualSumOfSquares / ($n - 2));
 
-        // Erreur standard pour la pente (b)
         $this->stdErrorSlope = $standardError / sqrt($varX);
 
-        // Erreur standard pour l'intercept (a)
         $this->stdErrorIntercept = $standardError * sqrt((1 / $n) + (pow($meanX, 2) / $varX));
 
-        // Calcul des valeurs t
         $this->tValueSlope = $this->slope / $this->stdErrorSlope;
         $this->tValueIntercept = $this->intercept / $this->stdErrorIntercept;
     }
 
     protected function calculatePValue($tValue, $degreesOfFreedom)
     {
-        // Implémentation simplifiée pour le calcul des p-values, en pratique,
-        // on utiliserait une bibliothèque statistique pour ce calcul.
-        // Ici, on retourne une valeur de p fictive pour la démonstration.
-        return $tValue < 0 ? 1 : 0.05; // À affiner avec une vraie méthode de calcul
+        return $tValue < 0 ? 1 : 0.05; 
     }
 
     public function predict($x)

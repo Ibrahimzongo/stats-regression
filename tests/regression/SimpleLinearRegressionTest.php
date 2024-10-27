@@ -13,7 +13,6 @@ class SimpleLinearRegressionTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        // Initialisation d'une nouvelle instance de SimpleLinearRegression avant chaque test
         $this->regression = new SimpleLinearRegression();
     }
 
@@ -35,11 +34,7 @@ class SimpleLinearRegressionTest extends TestCase
         // Vérification des valeurs t
         $this->assertEquals(8.92846891980414, $this->regression->getTValueSlope(), 'La valeur t pour la pente doit être proche de 8.92846891980414');
         $this->assertEquals(4.973419981768984, $this->regression->getTValueIntercept(), 'La valeur t pour l\'intercept doit être proche de 4.973419981768984');
-
-        // Vérification des valeurs p (approximatives)
-        // $this->assertEquals(0.002, $this->regression->getPValueSlope(), 'La valeur p pour la pente doit être proche de 0.002');
-        // $this->assertEquals(0.015, $this->regression->getPValueIntercept(), 'La valeur p pour l\'intercept doit être proche de 0.015');
-    }
+   }
 
     public function testPredict(): void
     {
