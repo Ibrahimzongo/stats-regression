@@ -38,12 +38,15 @@
 
 ## Installation
 
-1. Clonez ce dépôt :
+1. **Installation via Composer** (recommandé) :
+   ```bash
+   composer require stats/statistic-regression
+
+2. Clonez ce dépôt :
    ```bash
    git clone https://github.com/Ibrahimzongo/stats-regression.git
-   cd statistic-regression
    ```
-2. Installez les dépendances :
+3. Installez les dépendances :
    ```bash
    composer install
    ```
