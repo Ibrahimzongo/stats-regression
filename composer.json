@@ -1,5 +1,5 @@
 {
-    "name": "stats/regression",
+    "name": "stats/stats-regression",
     "description": "Statistical regression library for PHP",
     "type": "library",
     "license": "MIT",
