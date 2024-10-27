@@ -2,7 +2,7 @@
 # Stats Regression
 
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.4-blue)](https://www.php.net/)
-[![Packagist Version](https://img.shields.io/packagist/v/azongo/stats-regression)](https://packagist.org/packages/azongo/stats-regression)
+[![Packagist Version](https://img.shields.io/packagist/v/stats/statistic-regression)](https://packagist.org/packages/stats/statistic-regression)
 [![License](https://img.shields.io/github/license/Ibrahimzongo/stats-regression)](LICENSE)
 
 **Stats Regression** est une bibliothèque PHP simple pour la régression linéaire, qui aide à modéliser la relation entre une variable dépendante (Y) et une variable indépendante (X) à l'aide d'un modèle linéaire. Elle inclut des méthodes pour ajuster un modèle de régression, faire des prédictions, et extraire des statistiques clés comme la pente, l'intercept, les erreurs standards, et les valeurs `t`.
